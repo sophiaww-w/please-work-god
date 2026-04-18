@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at center, #020b1a 0%, #010611 100%);
+  color: white;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+nav h2 {
+  margin: 0;
+}
+
+nav a {
+  color: #cfe6ff;
+  text-decoration: none;
+  margin-left: 25px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* BUTTON */
+.btn {
+  background: linear-gradient(135deg, #4da3ff, #1f7ae0);
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 0 0 15px rgba(77,163,255,0.4);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(77,163,255,0.8);
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+/* ORG LAYOUT */
+.org-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* IMAGE PLACEHOLDER */
+.image-box {
+  background: rgba(255,255,255,0.05);
+  height: 200px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+/* PROGRESS */
+.progress {
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 20px;
+  background: linear-gradient(90deg, #4da3ff, #00c6ff);
+  box-shadow: 0 0 20px #4da3ff;
+  width: 0%;
+  transition: width 1s ease;
+}
+
+/* GLOBE */
+#globe-container {
+  width: 100%;
+  height: 80vh;
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: absolute;
+  background: white;
+  color: black;
+  padding: 10px 14px;
+  border-radius: 10px;
+  display: none;
+  font-size: 14px;
+  cursor: pointer;
+}
