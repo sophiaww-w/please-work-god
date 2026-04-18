@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Locations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <h2>All Locations</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<div id="list"></div>
+
+<script src="data.js"></script>
+<script>
+const list = document.getElementById("list");
+
+orgData.forEach(org => {
+  list.innerHTML += `
+    <div class="card">
+      <h2>${org.name}</h2>
+      <p>${org.city}, ${org.country}</p>
+
+      <div class="image-box">Image</div>
+
+      <a href="org.html?id=${org.id}" class="btn">Learn More</a>
+      <a href="${org.stripe}" class="btn">Donate Now</a>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
