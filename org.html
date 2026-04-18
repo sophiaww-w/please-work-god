@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Organization</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <h2 id="title"></h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="viewall.html">View All</a>
+  </div>
+</nav>
+
+<div class="card org-layout">
+
+  <div>
+    <div class="image-box">Image</div>
+    <div class="image-box">Image</div>
+    <div class="image-box">Image</div>
+  </div>
+
+  <div>
+    <h1 id="name"></h1>
+    <p id="location"></p>
+
+    <p id="desc"></p>
+
+    <h3>What We Need</h3>
+    <ul id="needs"></ul>
+
+    <p id="goal"></p>
+
+    <div class="progress">
+      <div id="bar" class="progress-bar"></div>
+    </div>
+
+    <br>
+
+    <a id="donate" class="btn">Donate Now</a>
+    <a href="index.html" class="btn">Back</a>
+  </div>
+
+</div>
+
+<script src="data.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const org = orgData.find(o => o.id === id);
+
+document.getElementById("title").innerText = org.name;
+document.getElementById("name").innerText = org.name;
+document.getElementById("location").innerText = `${org.city}, ${org.country}`;
+document.getElementById("desc").innerText = org.description;
+
+document.getElementById("goal").innerText =
+  `Raised $${org.raised} of $${org.goal}`;
+
+const percent = (org.raised / org.goal) * 100;
+setTimeout(() => {
+  document.getElementById("bar").style.width = percent + "%";
+}, 200);
+
+const needsList = document.getElementById("needs");
+org.needs.forEach(n => {
+  needsList.innerHTML += `<li>${n}</li>`;
+});
+
+document.getElementById("donate").href = org.stripe;
+</script>
+
+</body>
+</html>
